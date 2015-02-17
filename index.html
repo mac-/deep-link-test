@@ -5,14 +5,18 @@
 	</head>
 	<body>
 		Redirecting...
-		<iframe style="display: none;" id="itriage_redirect" src="itriagehealth://symptoms"></iframe>
+		<iframe style="display: none;" onload="javascript:test()" id="itriage_redirect" src="itriagehealth://symptoms"></iframe>
 	</body>
 	<script>
 
+	function test() {
+		console.log('test hit!');
+	}
+
 	setTimeout(function() {
 		var iframe = document.getElementById('itriage_redirect');
-		console.log(iframe.contentWindow, iframe.contentWindow.document, iframe.contentWindow.document.body, iframe.contentWindow.document.body.innerHTML);
-		if (!iframe.contentWindow || !iframe.contentWindow.document || !iframe.contentWindow.document.body || !iframe.contentWindow.document.body.innerHTML) {
+		console.log(iframe.contentWindow, iframe.contentWindow.document, iframe.contentWindow.document.body);
+		if (!iframe.contentWindow || !iframe.contentWindow.document || !iframe.contentWindow.document.body) {
 			// possibly launch app store?
 			//window.location = 'https://www.itriagehealth.com/symptoms'
 		}
