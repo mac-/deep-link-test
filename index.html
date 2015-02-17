@@ -2,7 +2,11 @@
 <html>
 	<head>
 		<title>iTriage Health</title>
-		<script>
+	</head>
+	<body>
+		<iframe id="test" src="itriagehealth://symptoms"></iframe>
+	</body>
+	<script>
 
 		(function isLoaded() {
 			var iframe = document.getElementById('test');
@@ -17,8 +21,4 @@
 		})();
 
 		</script>
-	</head>
-	<body>
-		<iframe id="test" src="itriagehealth://symptoms"></iframe>
-	</body>
 </html>
