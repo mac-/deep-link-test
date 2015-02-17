@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Test</title>
+		<title>iTriage Health</title>
 		<script>
 
 		(function isLoaded() {
@@ -9,9 +9,10 @@
 			if (iframe.contentWindow && iframe.contentWindow.document &&
 				iframe.contentWindow.document.body &&
 				iframe.contentWindow.document.body.innerHTML) {
-				alert("ONLOAD: "+ iframe.contentWindow.document.body.innerHTML);
+				console.log("ONLOAD: "+ iframe.contentWindow.document.body.innerHTML);
 			} else {
 				setTimeout(isLoaded, 333);
+				console.log('here');
 			}
 		})();
 
