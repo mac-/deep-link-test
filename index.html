@@ -11,17 +11,13 @@
 
 	setTimeout(function() {
 		var iframe = document.getElementById('itriage_redirect');
-		if (iframe.contentWindow && iframe.contentWindow.document &&
-			iframe.contentWindow.document.body &&
-			iframe.contentWindow.document.body.innerHTML) {
-			console.log('loaded');
-		}
-		else {
+		console.log(iframe.contentWindow, iframe.contentWindow.document, iframe.contentWindow.document.body, iframe.contentWindow.document.body.innerHTML);
+		if (!iframe.contentWindow || !iframe.contentWindow.document || !iframe.contentWindow.document.body || !iframe.contentWindow.document.body.innerHTML) {
 			// possibly launch app store?
 			window.location = 'https://www.itriagehealth.com/symptoms'
 		}
 
-	}, 300);
+	}, 30000);
 
 	</script>
 </html>
