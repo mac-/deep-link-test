@@ -4,28 +4,22 @@
 		<title>iTriage Health</title>
 		<script>
 		var loaded = false;
-		function test() {
+		function iframeLoaded() {
 			loaded = true;
-			console.log('test hit!');
 		}
+
+		setTimeout(function() {
+			if (!loaded) {
+				// possibly launch app store?
+				window.location = 'https://www.itriagehealth.com/symptoms'
+			}
+
+		}, 300);
+
 		</script>
 	</head>
 	<body>
 		Redirecting...
-		<iframe style="display: none;" onload="test()" id="itriage_redirect" src="itriagehealth://symptoms"></iframe>
+		<iframe style="display: none;" onload="iframeLoaded()" id="itriage_redirect" src="itriagehealth://symptoms"></iframe>
 	</body>
-	<script>
-
-	setTimeout(function() {
-		var iframe = document.getElementById('itriage_redirect');
-		console.log('---', loaded);
-		console.log(iframe.contentWindow, iframe.contentWindow.document, iframe.contentWindow.document.body);
-		if (!iframe.contentWindow || !iframe.contentWindow.document || !iframe.contentWindow.document.body) {
-			// possibly launch app store?
-			//window.location = 'https://www.itriagehealth.com/symptoms'
-		}
-
-	}, 300);
-
-	</script>
 </html>
