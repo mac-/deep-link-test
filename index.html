@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test</title>
+		<script>
+
+		(function isLoaded() {
+			var iframe = document.getElementById('test');
+			if (iframe.contentWindow && iframe.contentWindow.document &&
+				iframe.contentWindow.document.body &&
+				iframe.contentWindow.document.body.innerHTML) {
+				alert("ONLOAD: "+ iframe.contentWindow.document.body.innerHTML);
+			} else {
+				setTimeout(isLoaded, 333);
+			}
+		})();
+
+		</script>
+	</head>
+	<body>
+		<iframe id="test" src="itriagehealth://symptoms"></iframe>
+	</body>
+</html>
