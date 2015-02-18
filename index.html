@@ -14,12 +14,25 @@
 				window.location = 'https://www.itriagehealth.com/symptoms'
 			}
 
-		}, 300);
+		}, 30000);
 
 		</script>
 	</head>
 	<body>
 		Redirecting...
-		<iframe style="display: none;" onload="iframeLoaded()" id="itriage_redirect" src="itriagehealth://symptoms"></iframe>
+		<iframe id="test" style="display: none;"></iframe>
 	</body>
+	<script type="text/javascript">
+		try{
+			var iframe = document.getElementById('test');
+            iFrame.contentWindow.location.href = 'itriagehealth://symptoms';
+        } catch(e) {
+        	console.log(e);
+            //FireFox
+            // if (e.name == "NS_ERROR_UNKNOWN_PROTOCOL"){
+            //     isSupported = false;
+            //     result();
+            // }
+        }
+	</script>
 </html>
